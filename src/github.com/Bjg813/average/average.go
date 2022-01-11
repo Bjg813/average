@@ -1,5 +1,5 @@
 // Average calculates the average of several numbers.
-package average
+package main
 
 import (
 	"fmt"
