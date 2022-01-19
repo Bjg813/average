@@ -1,18 +1,16 @@
-// Average calculates the average of several numbers.
+// Average calculates the average of several numbers using a variadic function.
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func main() {
-	numbers := [3]float64{71.8, 56.2, 89.5}
+func average(numbers ...float64) float64 {
 	var sum float64 = 0
 	for _, number := range numbers {
 		sum += number
 	}
-	// Use len to find the length of the array.
-	// Divide the sum of the array integers then divide by length of array to find the average.
-	sampleCount := float64(len(numbers))
-	fmt.Printf("Average: %0.2f\n", sum/sampleCount)
+	return sum / float64(len(numbers))
+}
+
+func main() {
+	fmt.Println(average(20, 10))
 }
