@@ -1,7 +1,12 @@
 // Average calculates the average of several numbers using a variadic function.
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"os"
+	"strconv"
+)
 
 func average(numbers ...float64) float64 {
 	var sum float64 = 0
@@ -12,5 +17,14 @@ func average(numbers ...float64) float64 {
 }
 
 func main() {
-	fmt.Println(average(20, 10))
+	arguments := os.Args[1:]
+	var numbers []float64
+	for _, argument := range arguments {
+		number, err := strconv.ParseFloat(argument, 64)
+		if err != nil {
+			log.Fatal(err)
+		}
+		numbers = append(numbers, number)
+	}
+	fmt.Printf("Average: %0.2f\n", average(numbers...))
 }
