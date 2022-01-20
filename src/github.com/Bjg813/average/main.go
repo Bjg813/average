@@ -8,6 +8,7 @@ import (
 	"strconv"
 )
 
+// Average function is a variadic function that finds the sum of as many numbers as you want then finds the average by dividing number of elements in arguments.
 func average(numbers ...float64) float64 {
 	var sum float64 = 0
 	for _, number := range numbers {
