@@ -19,6 +19,7 @@ func average(numbers ...float64) float64 {
 func main() {
 	// Arguments variable will hold the numbers entered from the terminal.
 	// Numbers slice will eventually hold the numbers we're averaging entered from the terminal.
+	// Get a new slice that includes the second element (index 1) through the end of os.Args.
 	arguments := os.Args[1:]
 	var numbers []float64
 	for _, argument := range arguments {
